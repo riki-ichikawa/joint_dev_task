@@ -5,8 +5,13 @@ print("#####q1#####".PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
   # 以下に回答を記載
+<?php  
+$names = ["田中", "佐藤", "佐々木", "高橋"];
+$names[] = "斎藤";
 
-echo PHP_EOL;
+print_r($names);
+
+?>
 
 print("#####q2#####".PHP_EOL);
 $array1 = ["dog", "cat", "fish"];
@@ -14,14 +19,31 @@ $array2 = ["bird", "bat", "tiger"];
 
   # 以下に回答を記載
 
-echo PHP_EOL;
+<?php 
+$array1 = ["dog", "cat", "fish"];
+$array2 = ["bird", "bat", "tiger"];
+$array = array_merge($array1, $array2);
+
+print_r($array);
+?>
 
 print("#####q3#####".PHP_EOL);
 $numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9];
 
   # 以下に回答を記載
+<?php 
+$numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9];
+$counter = 0;
 
-echo PHP_EOL;
+foreach($numbers as $number){
+  if($number === 3){
+    $counter++;  
+  }  
+}
+
+echo "3の個数は". $counter. "個です。";
+
+?>
 
 print("#####q4#####".PHP_EOL);
 $sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
