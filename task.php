@@ -49,30 +49,66 @@ print("#####q4#####".PHP_EOL);
 $sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
 
   # 以下に回答を記載
+<?php 
+  $sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
+  
+  print_r(array_filter($sports));
 
-echo PHP_EOL;
+?>
 
 print("#####q5#####".PHP_EOL);
 $array1 = [];
 $array2 = [1, 5, 8, 10];
 
   # 以下に回答を記載
+<?php 
+  $array1 = [];
+  $array2 = [1, 5, 8, 10];
+  
+  echo '$array1 = []'. "\n";
 
-echo PHP_EOL;
+  if (empty($array1)){
+    echo "＃実行結果：\n true \n";
+  }else{
+    echo "＃実行結果：\n false \n";
+  }
+
+  echo '$array2 = [1, 5, 8, 10]'. "\n";
+
+  if (empty($array2)){
+    echo "＃実行結果：\n true \n";
+  }else{
+    echo "＃実行結果：\n false \n";
+  }
+
+?>
 
 print("#####q6#####".PHP_EOL);
 $numbers1 = [1, 2, 3, 4, 5];
 
   # 以下に回答を記載
+<?php 
 
-echo PHP_EOL;
+  $numbers1 = [1, 2, 3, 4, 5];
+
+  foreach($numbers1 as $number){
+      $numbers2[] = $number * 10;
+  }
+
+  print_r($numbers2);
+
+?>
 
 print("#####q7#####".PHP_EOL);
 $array = ["1", "2", "3", "4", "5"];
 
   # 以下に回答を記載
+<?php 
 
-echo PHP_EOL;
+  $array = ["1", "2", "3", "4", "5"];
+  print_r(array_map('intval', $array));
+
+?>
 
 print("#####q8#####".PHP_EOL);
 $programming_languages = ["php","ruby","python","javascript"];
