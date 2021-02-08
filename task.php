@@ -114,6 +114,7 @@ print("#####q8#####".PHP_EOL);
 $programming_languages = ["php","ruby","python","javascript"];
 
   # 以下に回答を記載
+$programming_languages = array_map('ucfirst', $programming_languages);
 $upper_case_programming_languages = array_map('strtoupper', $programming_languages);
 
   # 以下は変更しないで下さい
@@ -131,7 +132,7 @@ $member_number = 1;
 
 foreach($names as $name){
     $member_names[] = "会員No.". $member_number. " ". $name;
-    $member_number ++ ;
+    $member_number++ ;
 }
 
 print_r($member_names);
@@ -144,9 +145,6 @@ $foods = ["いか","たこ","うに","しゃけ","うにぎり","うに軍艦","
 
   # 以下に回答を記載
 
-
-$foods = ["いか","たこ","うに","しゃけ","うにぎり","うに軍艦","うに丼"];
-
 foreach($foods as $food){
     if (strpos($food,"うに") !== false){
         echo $food. "は好物です。\n";
@@ -158,19 +156,49 @@ foreach($foods as $food){
 echo PHP_EOL;
 ?>
 
+<?php
 print("#####q11#####".PHP_EOL);
 $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
 
-  # 以下に回答を記載
+# 以下に回答を記載
+$sports_lists = [];
+$count = 0;
+
+foreach($sports as $key => $sport){
+    if (is_array($sport)){
+        $sports_list = array_merge($sports_list, $sport);
+    }else{
+        $sports_list[] = $sport;
+    }
+}
+
+$sports_list = array_unique($sports_list);
+$sports_list = array_values($sports_list);
+
+echo "ユーザーの趣味一覧". PHP_EOL;
+foreach($sports_list as $key => $value){
+    $key++;
+    print("No". $key. " ". $value. PHP_EOL);
+}
 
 echo PHP_EOL;
 
+?>
+<?php
 print("#####q12#####".PHP_EOL);
 $data = [ "user" => [ "name" => "satou", "age" => 33 ] ];
 
   # 以下に回答を記載
+foreach($data as $users){
+    foreach($users as $user => $user_data){
+        if ($user == "name"){
+            print($user_data);
+        }
+    }
+}
 
 echo PHP_EOL;
+?>
 
 print("#####q13#####".PHP_EOL);
 $user_data = [ "name" => "神里", "age" => 31, "address" => "埼玉"];
