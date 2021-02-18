@@ -361,19 +361,48 @@ print($book->name.PHP_EOL);
 echo PHP_EOL;
 ?>
 
+<?php 
+
 print("#####q20#####".PHP_EOL);
 class Human
 {
 
   # コードを追加
+    public $user_name;
+    public $user_age;
 
+    function __construct($human_user_name, $human_user_age){
+        $this->user_name = $human_user_name;
+        $this->user_age = $human_user_age;        
+    }
 }
 
 class Zoo
 {
     
   # コードを追加
-    
+    protected $name;
+    protected $entry_fee;
+
+    function __construct($zoo_name, $zoo_entry_fee){
+        $this->name = $zoo_name;
+        $this->entry_fee = $zoo_entry_fee;        
+    }
+
+    function info_entry_fee($human){
+            if ($human->user_age <= 5){
+                print($human->user_name. "さんの入場料金は ". $this->entry_fee["infant"]. " 円です。". PHP_EOL) ;
+            }
+            elseif ($human->user_age <= 12){
+                print($human->user_name. "さんの入場料金は ". $this->entry_fee["children"]. " 円です。". PHP_EOL) ;
+            }
+            elseif ($human->user_age <= 64){
+                print($human->user_name. "さんの入場料金は ". $this->entry_fee["adult"]. " 円です。". PHP_EOL) ;
+            }
+            elseif ($human->user_age <= 120){
+                print($human->user_name. "さんの入場料金は ". $this->entry_fee["senior"]. " 円です。". PHP_EOL) ;
+            }
+    }
 }
 
 $zoo = new Zoo("旭山動物園",[ "infant" => 0, "children" => 400, "adult" => 800, "senior" => 500]);
@@ -390,3 +419,26 @@ foreach($humans as $human){
 }
 
 echo PHP_EOL;
+
+?>
+
+<?php 
+print("#####q21#####".PHP_EOL);
+
+for ($i=1; $i<=30; $i++) {
+    if ($i%3 == 0 && $i%7 == 0){
+        print("FizzHoge". PHP_EOL);
+    }elseif ($i%3 == 0 && $i%5 == 0){
+        print("FizzBuzz". PHP_EOL);
+    }elseif ($i%7 == 0){
+        print("Hoge". PHP_EOL);
+    }elseif ($i%5 == 0){
+        print("Buzz". PHP_EOL);
+    }elseif ($i%3 == 0){
+        print("Fizz". PHP_EOL);
+    } else {
+        print($i. PHP_EOL);
+    }
+}
+
+?>
