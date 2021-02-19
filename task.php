@@ -426,19 +426,23 @@ echo PHP_EOL;
 print("#####q21#####".PHP_EOL);
 
 for ($i=1; $i<=30; $i++) {
-    if ($i%3 == 0 && $i%7 == 0){
-        print("FizzHoge". PHP_EOL);
-    }elseif ($i%3 == 0 && $i%5 == 0){
-        print("FizzBuzz". PHP_EOL);
-    }elseif ($i%7 == 0){
-        print("Hoge". PHP_EOL);
-    }elseif ($i%5 == 0){
-        print("Buzz". PHP_EOL);
-    }elseif ($i%3 == 0){
-        print("Fizz". PHP_EOL);
-    } else {
-        print($i. PHP_EOL);
-    }
+  if ($i%3 == 0 && $i%5 == 0 && $i%7 == 0){
+      print("FizzBuzzHoge". PHP_EOL);
+  }elseif ($i%5 == 0 && $i%7 == 0){
+      print("BuzzHoge". PHP_EOL);
+  }elseif ($i%3 == 0 && $i%7 == 0){
+      print("FizzHoge". PHP_EOL);
+  }elseif ($i%3 == 0 && $i%5 == 0){
+      print("FizzBuzz". PHP_EOL);
+  }elseif ($i%7 == 0){
+      print("Hoge". PHP_EOL);
+  }elseif ($i%5 == 0){
+      print("Buzz". PHP_EOL);
+  }elseif ($i%3 == 0){
+      print("Fizz". PHP_EOL);
+  } else {
+      print($i. PHP_EOL);
+  }
 }
 
 ?>
